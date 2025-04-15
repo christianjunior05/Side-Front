@@ -23,14 +23,21 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-gray-100">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
-        <h2 className="text-2xl font-bold mb-6 text-center">Connexion</h2>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-white to-gray-100 px-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8">
+        <h2 className="text-2xl font-bold mb-6 text-center text-black">
+          Bienvenue <span className="inline-block">👋</span>
+        </h2>
+        <p className="text-sm text-gray-600 mb-4 text-center">
+          Connecte-toi pour accéder au dashboard
+        </p>
+
         {error && (
           <div className="bg-red-100 text-red-600 text-sm rounded p-2 mb-4">
             {error}
           </div>
         )}
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700">Email</label>
@@ -39,7 +46,8 @@ const LoginPage = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="mt-1 w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
+              placeholder="exemple@mail.com"
+              className="mt-1 w-full px-4 py-2 bg-black text-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
           <div>
@@ -49,16 +57,20 @@ const LoginPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="mt-1 w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-blue-200"
+              className="mt-1 w-full px-4 py-2 bg-black text-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
           >
             Se connecter
           </button>
         </form>
+
+        <p className="text-xs text-gray-400 mt-6 text-center">
+          © 2025 RealTime Dashboard. Tous droits réservés.
+        </p>
       </div>
     </div>
   );

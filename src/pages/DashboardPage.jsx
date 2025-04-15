@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const DashboardPage = () => {
-  const [stats, setStats] = useState({
+  const [stats] = useState({
     users: 120,
     sales: 3200,
     visits: 18000,
